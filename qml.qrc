@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qml/ui/MenuButton.qml</file>
+        <file>qml/configuration/AppState.qml</file>
+        <file>qml/configuration/qmldir</file>
+        <file>qml/scene/WaterDemoScene.qml</file>
+        <file>assets/WaterDemo/img/background.png</file>
+        <file>assets/WaterDemo/img/logo-fish.png</file>
+        <file>js/helper.js</file>
+    </qresource>
+</RCC>
