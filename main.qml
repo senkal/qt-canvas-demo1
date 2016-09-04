@@ -11,13 +11,12 @@ Window {
     height: 480
 
     Item {
-        id: root
+        id: app
         anchors.fill: parent
 
         WaterDemoScene {
             id: waterDemoScene
         }
-
 
         Item {
             id: menuScene
@@ -30,7 +29,7 @@ Window {
 
                 MenuButton {
                     text: 'Water demo'
-                    onClicked: root.state = AppState.waterDemo
+                    onClicked: app.state = AppState.waterDemo
                 }
             }
         }

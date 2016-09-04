@@ -17,4 +17,5 @@ DISTFILES += \
     README.md \
     qt-demos.qmlproject \
     deployment.pri \
-    assets/WaterDemo/img/background.png
+    assets/WaterDemo/img/background.png \
+    assets/WaterDemo/img/logo-bubble.png

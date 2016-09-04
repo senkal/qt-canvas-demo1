@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Item {
     id: container
-    anchors.fill: root
+    anchors.fill: app
     visible: false
 
     readonly property string assetsPath: '../../assets/WaterDemo/img/'
@@ -35,7 +35,7 @@ Item {
     }
 
     Image {
-        source: "gfx/logo-bubble.png"
+        source: getImagePath('logo-bubble.png')
         anchors.top: parent.top
 
         SequentialAnimation on x {
@@ -55,8 +55,8 @@ Item {
         }
         SequentialAnimation on height {
             loops: Animation.Infinite
-            NumberAnimation { from: 150; to: 140; duration: 800; easing.type: Easing.InOutQuad }
-            NumberAnimation { from: 140; to: 150; duration: 1000; easing.type: Easing.InOutQuad }
+            NumberAnimation { from: 160; to: 140; duration: 800; easing.type: Easing.InOutQuad }
+            NumberAnimation { from: 140; to: 160; duration: 1000; easing.type: Easing.InOutQuad }
         }
     }
 }
