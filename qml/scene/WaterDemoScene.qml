@@ -12,7 +12,7 @@ Item {
     }
 
     Image {
-        width: parent.width
+        width: container.width
         height: 1440
         y: -(480 * 2)
         source: getImagePath('background.png')
@@ -36,7 +36,7 @@ Item {
 
     Image {
         source: getImagePath('logo-bubble.png')
-        anchors.top: parent.top
+        anchors.top: container.top
 
         SequentialAnimation on x {
             loops: Animation.Infinite
