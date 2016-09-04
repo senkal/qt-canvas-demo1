@@ -10,5 +10,6 @@
         <file>js/helper.js</file>
         <file>assets/WaterDemo/img/logo-bubble.png</file>
         <file>assets/WaterDemo/img/catch.png</file>
+        <file>assets/WaterDemo/img/sunlight.png</file>
     </qresource>
 </RCC>

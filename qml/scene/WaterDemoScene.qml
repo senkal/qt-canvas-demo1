@@ -12,44 +12,69 @@ Item {
         return assetsPath + image;
     }
 
-
     Image {
         width: container.width
         height: 1440
         y: -(480 * 2)
         source: getImagePath('background.png')
+    }
 
-        ParticleSystem {
-            id: particles
-            anchors.fill: parent
+    Image {
+        source: getImagePath('sunlight.png')
+        opacity: 0.02
+        y: -35
+        anchors.horizontalCenter: container.horizontalCenter
+        transformOrigin: Item.Top
+        SequentialAnimation on rotation {
+            loops: Animation.Infinite
+            NumberAnimation { from: -10; to: 10; duration: 8000; easing.type: Easing.InOutSine }
+            NumberAnimation { from: 10; to: -10; duration: 8000; easing.type: Easing.InOutSine }
+        }
+    }
 
-            ImageParticle {
-                id: bubble
-                anchors.fill: parent
-                source: getImagePath('catch.png')
-                opacity: 0.25
-            }
+    Image {
+        source: getImagePath('/sunlight.png')
+        opacity: 0.04
+        y: -15
+        anchors.horizontalCenter: container.horizontalCenter
+        transformOrigin: Item.Top
+        SequentialAnimation on rotation {
+            loops: Animation.Infinite
+            NumberAnimation { from: 10; to: -10; duration: 8000; easing.type: Easing.InOutSine }
+            NumberAnimation { from: -10; to: 10; duration: 8000; easing.type: Easing.InOutSine }
+        }
+    }
 
-            Wander {
-                xVariance: 25;
-                pace: 25;
-            }
+    ParticleSystem {
+        id: particles
+        anchors.fill: container
 
-            Emitter {
-                width: parent.width
-                height: 175
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 3
-                startTime: 15000
+        ImageParticle {
+            id: bubble
+            anchors.fill: particles
+            source: getImagePath('catch.png')
+            opacity: 0.25
+        }
 
-                emitRate: 2
-                lifeSpan: 15000
+        Wander {
+            xVariance: 25;
+            pace: 25;
+        }
 
-                acceleration: PointDirection{y: -6; xVariation: 2; yVariation: 2 }
+        Emitter {
+            width: particles.width
+            height: 175
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 3
+            startTime: 15000
 
-                size: 24
-                sizeVariation: 16
-            }
+            emitRate: 2
+            lifeSpan: 15000
+
+            acceleration: PointDirection{y: -6; xVariation: 2; yVariation: 2 }
+
+            size: 24
+            sizeVariation: 16
         }
     }
 
