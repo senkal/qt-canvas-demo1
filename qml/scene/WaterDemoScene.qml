@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import QtQuick.Particles 2.0
 
 Item {
     id: container
@@ -11,11 +12,45 @@ Item {
         return assetsPath + image;
     }
 
+
     Image {
         width: container.width
         height: 1440
         y: -(480 * 2)
         source: getImagePath('background.png')
+
+        ParticleSystem {
+            id: particles
+            anchors.fill: parent
+
+            ImageParticle {
+                id: bubble
+                anchors.fill: parent
+                source: getImagePath('catch.png')
+                opacity: 0.25
+            }
+
+            Wander {
+                xVariance: 25;
+                pace: 25;
+            }
+
+            Emitter {
+                width: parent.width
+                height: 175
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 3
+                startTime: 15000
+
+                emitRate: 2
+                lifeSpan: 15000
+
+                acceleration: PointDirection{y: -6; xVariation: 2; yVariation: 2 }
+
+                size: 24
+                sizeVariation: 16
+            }
+        }
     }
 
     Image {
