@@ -8,29 +8,60 @@ Rectangle {
     color: 'white'
     radius: 50
     rotation: 90
+    z: 100
     gradient: Gradient {
-        GradientStop { position: 0.0; color: "red" }
-        GradientStop { position: 1.0; color: "black" }
+        GradientStop {
+            id: fromColor
+            position: 0.0;
+            color: "red"
+        }
+        GradientStop {
+            id: toColor
+            position: 1.0;
+            color: "black"
+        }
     }
+
+    signal finished
+    signal started
 
     readonly property int animationTime: 300
+    readonly property int maxLength: container.height + container.width
 
-    Behavior on width {
-        NumberAnimation { duration: icon.animationTime }
+    property alias fromColor: fromColor.color
+    property alias toColor: toColor.color
+
+    ParallelAnimation {
+        id: expandAnimation
+        running: false
+        loops: 1
+
+        NumberAnimation {
+            target: icon
+            properties: "scale"
+            duration: animationTime
+            to: 12
+        }
+        NumberAnimation {
+            target: icon
+            property: 'radius'
+            duration: animationTime
+            to: maxLength/2
+        }
+        onStopped: {
+            icon.finished()
+        }
+        onStarted: {
+            icon.started()
+        }
     }
-    Behavior on height {
-        NumberAnimation { duration: icon.animationTime }
-    }
-    Behavior on radius {
-        NumberAnimation { duration: icon.animationTime }
-    }
+
+    transformOrigin: Item.Center
 
     MouseArea {
         anchors.fill: icon
         onClicked: {
-            parent.width = container.height + 100
-            parent.height = container.height + 100
-            parent.radius = (container.height + 100)/2
+            expandAnimation.start()
         }
     }
 }

@@ -13,5 +13,7 @@
         <file>assets/WaterDemo/img/sunlight.png</file>
         <file>qml/scene/GradientFillDemoScene.qml</file>
         <file>qml/ui/GradientFillDemo/Icon.qml</file>
+        <file>assets/tux6.png</file>
+        <file>qml/scene/ScaleDemo.qml</file>
     </qresource>
 </RCC>
