@@ -1,13 +1,15 @@
 import QtQuick 2.0
 
 Rectangle {
-    id: container;
-    width: 700
-    height: 700
+    id: container
+    anchors.fill: app
     visible: false
+
+    // todo decide what to do with this demo
+
     function goForIt(parent) {
-        parent.x = (Math.floor(Math.random()*600));
-        parent.y = (Math.floor(Math.random()*600));
+        parent.x = (Math.floor(Math.random()*220));
+        parent.y = (Math.floor(Math.random()*380));
         bounceAnimation.start();
     }
 

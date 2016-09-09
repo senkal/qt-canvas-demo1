@@ -14,12 +14,18 @@ Window {
         id: app
         anchors.fill: parent
 
+        // todo move to models, this is getting not maintenable
+
         WaterDemoScene {
             id: waterDemoScene
         }
 
         GradientFillDemoScene {
             id: gradientDemoScene
+        }
+
+        ScaleDemo {
+            id: scaleDemo
         }
 
         Item {
@@ -39,6 +45,10 @@ Window {
                     text: 'Gradient fill demo'
                     onClicked: app.state = AppState.gradientFillDemo
                 }
+                MenuButton {
+                    text: 'Simple scaling demo'
+                    onClicked: app.state = AppState.scaleDemo
+                }
             }
         }
 
@@ -56,6 +66,11 @@ Window {
                 name: AppState.gradientFillDemo
                 PropertyChanges {target: menuScene; visible: false}
                 PropertyChanges {target: gradientDemoScene; visible: true}
+            },
+            State {
+                name: AppState.scaleDemo
+                PropertyChanges {target: menuScene; visible: false}
+                PropertyChanges {target: scaleDemo; visible: true}
             }
         ]
     }
