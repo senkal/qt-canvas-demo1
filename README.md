@@ -10,3 +10,9 @@ Some basic animations and transitions.
 - sequentialAnimation on numeric properties
 - rotate images
 - particleSystem for emitting objects with some variations
+
+## Simple gradient fill object demo plus some animations
+Some basic animations and transitions.
+- fill rectangle with gradient
+- animate rectangle on scaling while keeping radius
+- side effect bit - simple scale demo
