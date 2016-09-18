@@ -25,7 +25,11 @@ Window {
         }
 
         ScaleDemo {
-            id: scaleDemo
+            id: scaleDemoScene
+        }
+
+        RainDemoScene {
+            id: rainDemoScene
         }
 
         Item {
@@ -49,6 +53,10 @@ Window {
                     text: 'Simple scaling demo'
                     onClicked: app.state = AppState.scaleDemo
                 }
+                MenuButton {
+                    text: 'Rain Demo'
+                    onClicked: app.state = AppState.rainDemo
+                }
             }
         }
 
@@ -70,7 +78,12 @@ Window {
             State {
                 name: AppState.scaleDemo
                 PropertyChanges {target: menuScene; visible: false}
-                PropertyChanges {target: scaleDemo; visible: true}
+                PropertyChanges {target: scaleDemoScene; visible: true}
+            },
+            State {
+                name: AppState.rainDemo
+                PropertyChanges {target: menuScene; visible: false}
+                PropertyChanges {target: rainDemoScene; visible: true}
             }
         ]
     }
