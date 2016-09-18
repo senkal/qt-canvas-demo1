@@ -7,4 +7,5 @@ Item {
     readonly property string waterDemo: 'WATER_ANIMATION'
     readonly property string gradientFillDemo: 'GRADIENT_FILL'
     readonly property string scaleDemo: 'SCALE_DEMO'
+    readonly property string rainDemo: 'RAIN_DEMO'
 }

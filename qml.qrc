@@ -15,5 +15,7 @@
         <file>qml/ui/GradientFillDemo/Icon.qml</file>
         <file>assets/tux6.png</file>
         <file>qml/scene/ScaleDemo.qml</file>
+        <file>qml/scene/RainDemoScene.qml</file>
+        <file>assets/RainDemo/img/rain.png</file>
     </qresource>
 </RCC>
